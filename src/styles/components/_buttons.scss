@@ -1,0 +1,64 @@
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/variables' as vars;
+
+.btn-toggle {
+  z-index: 2;
+  aspect-ratio: 1;
+
+  @include mixins.position($top: 0.8rem, $right: 0.8rem);
+  @include mixins.button-reset(
+    $bg: vars.$bg-900,
+    $color: vars.$text-light,
+    $height: vars.$height-md
+  );
+}
+
+.btn-add {
+  padding: 1rem;
+
+  @include mixins.button-reset(
+    $bg: vars.$primary,
+    $color: vars.$text-light,
+    $height: vars.$height-lg,
+    $border-radius: vars.$radius-lg
+  );
+
+  &:hover {
+    background-color: vars.$primary-light;
+  }
+}
+
+.btn-delete {
+  aspect-ratio: 1;
+
+  @include mixins.position($right: vars.$space-md);
+  @include mixins.button-reset(
+    $bg: vars.$red,
+    $color: vars.$bg-900,
+    $height: vars.$height-sm,
+    $font-size: vars.$font-xs
+  );
+
+  &:hover {
+    background-color: vars.$red-dark;
+  }
+}
+
+.btn-back {
+  z-index: 2;
+  aspect-ratio: 1;
+  font-family: sans-serif;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+
+  border-radius: vars.$radius-full;
+  /* background-color: var(--color-text); */
+
+  @include mixins.position($top: 0.6rem, $left: 0.6rem);
+  @include mixins.flex($align: center, $justify: center);
+  @include mixins.button-reset(
+    $bg: vars.$bg-white,
+    $color: vars.$bg-500,
+    $height: vars.$height-lg,
+    $font-size: vars.$font-lg
+  );
+}

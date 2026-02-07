@@ -1,0 +1,49 @@
+@use './variables' as vars;
+
+@mixin flex($gap: 0, $align: stretch, $justify: flex-start) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  gap: $gap;
+}
+
+@mixin grid($columns) {
+  display: grid;
+  align-items: center;
+  grid-template-columns: $columns;
+}
+
+@mixin button-reset(
+  $font-size: 1.4rem,
+  $bg: transparent,
+  $color: inherit,
+  $height: auto,
+  $border-radius: vars.$radius-full
+) {
+  border: none;
+  color: $color;
+  cursor: pointer;
+  height: $height;
+  font-weight: bold;
+  font-size: $font-size;
+  background-color: $bg;
+  border-radius: $border-radius;
+}
+
+@mixin card($bg, $radius: vars.$radius-md) {
+  background-color: $bg;
+  border-radius: $radius;
+}
+
+@mixin position($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin feedback {
+  font-size: 2rem;
+  text-align: center;
+}

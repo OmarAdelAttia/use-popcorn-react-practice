@@ -1,0 +1,17 @@
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/variables' as vars;
+
+.loader {
+  font-weight: 600;
+  text-transform: uppercase;
+
+  margin: vars.$space-xl;
+
+  @include mixins.feedback;
+}
+
+.error {
+  padding: 4.8rem;
+
+  @include mixins.feedback;
+}

@@ -1,0 +1,28 @@
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/variables' as vars;
+
+.summary {
+  padding: 2.2rem 3.2rem 1.8rem;
+  box-shadow: 0 1.2rem 2.4rem rgba(0, 0, 0, 0.2);
+
+  @include mixins.card($bg: vars.$bg-100);
+
+  h2 {
+    margin-bottom: 0.6rem;
+    text-transform: uppercase;
+
+    font-size: vars.$font-md;
+  }
+
+  div {
+    font-weight: 600;
+
+    font-size: vars.$font-md;
+
+    @include mixins.flex($gap: vars.$space-md, $align: center);
+  }
+
+  p {
+    @include mixins.flex($gap: vars.$space-xs, $align: center);
+  }
+}

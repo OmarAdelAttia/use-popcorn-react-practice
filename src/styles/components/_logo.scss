@@ -1,0 +1,15 @@
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/variables' as vars;
+
+.logo {
+  @include mixins.flex($align: center, $gap: vars.$space-xs);
+
+  span {
+    font-size: vars.$font-xl;
+  }
+
+  h1 {
+    color: vars.$bg-white;
+    font-size: vars.$font-lg;
+  }
+}

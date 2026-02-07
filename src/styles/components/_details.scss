@@ -1,0 +1,55 @@
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/variables' as vars;
+
+.rating {
+  font-weight: 600;
+  flex-direction: column;
+
+  padding: 2rem vars.$space-md;
+  margin-bottom: vars.$space-xs;
+
+  @include mixins.card($bg: vars.$bg-100);
+  @include mixins.flex($gap: vars.$space-md);
+}
+
+.details {
+  line-height: 1.4;
+
+  font-size: vars.$font-sm;
+
+  header {
+    @include mixins.flex;
+  }
+
+  section {
+    padding: 4rem;
+    flex-direction: column;
+
+    @include mixins.flex($gap: vars.$space-sm);
+  }
+
+  img {
+    width: 33%;
+  }
+
+  &-overview {
+    width: 100%;
+    flex-direction: column;
+
+    padding: vars.$space-md 3rem;
+    background-color: vars.$bg-100;
+
+    @include mixins.flex($gap: 1.4rem);
+
+    h2 {
+      line-height: 1.1;
+      margin-bottom: 0.4rem;
+
+      font-size: vars.$font-lg;
+    }
+
+    p {
+      @include mixins.flex($gap: vars.$space-xs, $align: center);
+    }
+  }
+}

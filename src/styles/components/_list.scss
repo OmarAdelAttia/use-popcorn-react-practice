@@ -1,0 +1,50 @@
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/variables' as vars;
+
+.list {
+  overflow: scroll;
+  list-style: none;
+  padding: vars.$space-xs 0;
+
+  li {
+    @include mixins.grid(4rem 1fr);
+
+    position: relative;
+    grid-template-rows: auto auto;
+
+    font-size: vars.$font-md;
+    column-gap: vars.$space-md;
+    border-bottom: 1px solid vars.$bg-100;
+    padding: vars.$space-sm vars.$space-lg;
+  }
+
+  p {
+    @include mixins.flex($align: center, $gap: vars.$space-xs);
+  }
+
+  img {
+    width: 100%;
+    grid-row: 1 / -1;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+  }
+
+  div {
+    @include mixins.flex($align: center, $gap: vars.$space-md);
+  }
+
+  &-watched {
+    height: calc(100% - 9rem);
+  }
+
+  &.list-movies li {
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: vars.$bg-100;
+    }
+  }
+}

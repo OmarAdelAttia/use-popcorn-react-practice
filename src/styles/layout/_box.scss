@@ -1,0 +1,11 @@
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mixins;
+
+.box {
+  width: 42rem;
+  overflow: scroll;
+  max-width: 42rem;
+  position: relative;
+
+  @include mixins.card($bg: vars.$bg-500);
+}

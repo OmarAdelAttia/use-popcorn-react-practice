@@ -1,0 +1,26 @@
+@use '../abstracts/mixins' as mixins;
+@use '../abstracts/variables' as vars;
+
+.search {
+  justify-self: center;
+  width: 40rem;
+  font-size: 1.8rem;
+  border: none;
+  /* background-color: vars.$bg-900; */
+  transition: all 0.3s;
+
+  color: vars.$text-light;
+  padding: 1.1rem vars.$space-sm;
+
+  @include mixins.card($bg: vars.$primary-light, $radius: vars.$radius-sm);
+
+  &::placeholder {
+    color: vars.$text-dark;
+  }
+
+  &:focus {
+    outline: none;
+    transform: translateY(-2px);
+    box-shadow: 0 2.4rem 2.4rem rgba(0, 0, 0, 0.1);
+  }
+}

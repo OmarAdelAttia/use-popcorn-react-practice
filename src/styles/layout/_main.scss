@@ -1,0 +1,8 @@
+@use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mixins;
+
+.main {
+  margin-top: vars.$space-md;
+  height: calc(100vh - 7.2rem - 3 * #{vars.$space-md});
+  @include mixins.flex($gap: vars.$space-md, $justify: center);
+}
